@@ -62,7 +62,7 @@ class SensorData(BaseModel):
 # ------------------------
 # DASHBOARD PAGE
 # ------------------------
-@app.get("/", response_class=HTMLResponse)
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 def dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
