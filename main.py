@@ -250,3 +250,6 @@ def debug_time():
         "difference": time.time() - last_update_time
     }
 
+@app.api_route("/health", methods=["GET", "HEAD"])
+def health():
+    return {"status": "ok"}
