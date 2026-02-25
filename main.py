@@ -252,9 +252,5 @@ def debug_time():
     }
 
 @app.api_route("/health", methods=["GET", "HEAD"])
-def health():
-    return {"status": "ok"}
-
-@app.api_route("/health", methods=["GET", "HEAD"])
 async def health():
     return PlainTextResponse("OK")
