@@ -16,6 +16,7 @@ from fastapi.responses import StreamingResponse
 from io import StringIO
 import sqlite3
 from datetime import datetime
+from fastapi.responses import PlainTextResponse
 
 DB_NAME = "sensor_data.db"
 
@@ -253,3 +254,7 @@ def debug_time():
 @app.api_route("/health", methods=["GET", "HEAD"])
 def health():
     return {"status": "ok"}
+
+@app.api_route("/health", methods=["GET", "HEAD"])
+async def health():
+    return PlainTextResponse("OK")
